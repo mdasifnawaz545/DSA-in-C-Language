@@ -1,0 +1,57 @@
+int top=-1;
+char stack_arr[];
+char s[]="()";
+int match(int a,int b)
+{
+    if(a=='(' && b==')')
+    return 1;
+    if(a=='{' && b=='}')
+    return 1;
+    if(a=='[' && b==']')
+    return 1;
+    else return 0;
+}
+void push(char n)
+{
+    top++;
+    stack_arr[top]=n;
+}
+char pop()
+{
+    char val=stack_arr[top];
+    top--;
+    return val;
+}
+int isValid(char  s[])
+{
+    int symbol,next;
+    for(int i=0;i<strlen(s);i++)
+    {
+        symbol=s[i];
+        if(symbol=='(' || symbol=='{'|| symbol=='[' )
+        {
+            push(i);
+        }
+        else if (symbol==')' || symbol=='}'|| symbol==']' )
+        {
+            if(top==-1)
+            {
+                return 0;
+            }
+            else 
+            {
+                next=pop();
+                if(match(next,symbol))
+                {
+                    
+                }
+                return 0;
+            }
+        }
+    }
+    if(top==-1)
+    {
+        return 1;
+    }
+    else return 0;
+}
