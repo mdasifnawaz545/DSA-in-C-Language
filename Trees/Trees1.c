@@ -14,12 +14,12 @@ int main()
 {
     struct node *root = NULL;
     root = create();
-    printf("Trees Data In Preorder is : ");
-    preorder(root);
+    // printf("Trees Data In Preorder is : ");
+    // preorder(root);
     printf("\nTrees Data In Inorder is : ");
     Inorder(root);
-    printf("\nTrees Data In Postorder is : ");
-    Postorder(root);
+    // printf("\nTrees Data In Postorder is : ");
+    // Postorder(root);
     return 0;
 }
 struct node *create()
